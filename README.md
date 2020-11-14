@@ -113,7 +113,7 @@ And look for the correct ID, in my case:
 name: <alsa_input.pci-0000_28_00.4.analog-stereo>
 ```
 
-Now we can create the loopback device. The easiest way is to copy  the **/etc/pulse/default.pa** file in your **~/.config/pulse/** directory, and add the extra parameters that we need.
+Now we can create the loopback device. The easiest way is to copy  the **/etc/pulse/default.pa** file in your **~/.config/pulse//** directory, and add the extra parameters that we need.
 
 ```sh
 $ cp /etc/pulse/default.pa ~/.config/pulse
@@ -177,7 +177,7 @@ There, paste this config editing it to your needs. (Check the interface name so 
 	bind interfaces only = yes
 	force user = YOUR_USERNAME
 
-[Users]
+[VMshare]
 	path = /home/absurd/VMshare # Here the path you want.
 	browseable = yes
 	read only = no
