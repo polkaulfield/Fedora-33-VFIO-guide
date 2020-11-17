@@ -98,6 +98,13 @@ When you have it created, open up the VM config and attach your passed through d
 If you are gonna use the KVM switch and passed through GPU right away, remove the **Video** and **Graphics** virtual devices from your VM config. You can do it after installation though.
 
 I recommend using Windows 10 Enterprise LTSC 2019 for the guest. It's light and doesn't take a lot of resources.
+Filename and hash (use Google)
+```
+en_windows_10_enterprise_ltsc_2019_x64_dvd_74865958.iso
+d6c7eca8741948eb91638717b3d927c3f122a803545a2e05fe412abcadddb8fe
+```
+Activate with this:
+(https://github.com/abbodi1406/KMS_VL_ALL_AIO)
 
 When you have everything installed and working we can move to the next step.
 
