@@ -132,32 +132,6 @@ Reset pulse or login and out and you should have the interface enabled. Configur
 $ sudo dnf install pavucontrol
 ```
 
-
-# Creating the isolated network
-To have guest to host communication, the default NAT network from libvirt doesn't work. We have to create an isolated one.
-Create this file as **hostonly.xml**
-```xml
-<network>
-  <name>hostntw</name>
-  <bridge name='virbr1' stp='on' delay='0'/>
-  <ip address='192.168.110.1' netmask='255.255.255.0'>
-    <dhcp>
-      <range start='192.168.110.10' end='192.168.110.254'/>
-    </dhcp>
-  </ip>
-</network>
-```
-Note that our host address is the gateway. If we want to connect to our host from the VMs we need to use **192.168.110.1**
-Then we define the network and enable it.
-```sh
-$ sudo virsh net-define hostonly.xml
-$ sudo sudo virsh net-start hostntw
-$ sudo virsh net-autostart hostntw
-```
-
-After this, we just need to add a new network adapter to our VM in **virt-manager** with the name **hostntw**. Dont delete the old one, we need the 2 adapters.
-
-
 # Setting up Samba for sharing files.
 For samba we need to install the samba server, configure it and create an isolated network to connect from the guest to the host. We also need to add a firewall rule.
 Start with:
@@ -173,7 +147,6 @@ There, paste this config editing it to your needs. (Check the interface name so 
 	workgroup = SAMBA
 	security = user
 	passdb backend = tdbsam
-	interfaces = virbr1
 	bind interfaces only = yes
 	force user = YOUR_USERNAME
 
