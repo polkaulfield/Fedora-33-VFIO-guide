@@ -187,4 +187,4 @@ Try to access your shared folder from your guest using this address: **\\192.168
 **TODO**: Explain how to set up everything with help of this project: (https://github.com/foxlet/macOS-Simple-KVM/)
 
 # Improving performance
-**TODO**: Explain how CPU pinning works and other things that I find useful.
+This guide has a lot of info: (https://mathiashueber.com/performance-tweaks-gaming-on-virtual-machines/)
