@@ -53,7 +53,15 @@ These are 2 drivers that bind to PCI devices so they are free from the host. VFI
 
 First add the drivers to your initramfs with Dracut.
 ```sh
-$ sudo dracut --add-drivers "vfio vfio-pci vfio_iommu_type1" --force
+$ sudo vim /etc/dracut.conf.d/vfio.conf
+```
+Add this to that file:
+```
+add_drivers+=" vfio vfio_iommu_type1 vfio_pci vfio_virqfd "
+```
+And remake the initramfs.
+```sh
+$ sudo dracut -f
 ```
 
 Then we need to edit your kernel parameters in GRUB.
